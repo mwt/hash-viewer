@@ -18,7 +18,7 @@
   </body>
 
   {%- for script in page.scripts -%}
-  <script src="{{ script }}"></script>
+  <script{% if script.async %} async{% endif %} src="{{ script.url }}"></script>
   {%- endfor -%}
 
 </html>
