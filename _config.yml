@@ -18,7 +18,7 @@ author:
   name: "Matthew Thomas"
   website: "https://mattwthomas.com"
 description: >- # this means to ignore newlines until "baseurl:"
-   You can use this to store entire documents in URLs. It is hash compatible with [Hashify](https://hashify.me) but has a simpler presentation and supports LaTeX math input via [MathJaX](https://www.mathjax.org/). It is hosted on [GitHub Pages](https://pages.github.com/) and has uses [marked](https://marked.js.org/) for markdown processing.
+   You can use this to store entire documents in URLs. It is similar to [Hashify](https://hashify.me) but has a simpler presentation, uses LZ-based compression via [lz-string](https://github.com/pieroxy/lz-string), and supports LaTeX math input via [MathJaX](https://www.mathjax.org/). It is hosted on [GitHub Pages](https://pages.github.com/) and uses [marked](https://marked.js.org/) for markdown processing.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb

@@ -2,7 +2,7 @@ function replaceText() {
     /* get the base64 hash from the url */
     var hash = window.location.pathname.substring(1);
     /* decode the hash into text */
-    var content = decodeURIComponent(escape(atob(hash)));
+    var content = decodeURIComponent(escape(LZString.decompressFromBase64(hash)));
     /* split into math and markdown segments */
     var contents = content.split('$$');
     if (contents.length === 1) {

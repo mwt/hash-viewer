@@ -1,6 +1,6 @@
 # Hash Viewer
 
-You can use this to store entire documents in URLs. It is hash compatible with [Hashify](https://hashify.me) but has a simpler presentation and supports LaTeX math input via [MathJaX](https://www.mathjax.org/). It is hosted on [GitHub Pages](https://pages.github.com/) and has uses [marked](https://marked.js.org/) for markdown processing.
+You can use this to store entire documents in URLs. It is similar to [Hashify](https://hashify.me) but has a simpler presentation, uses LZ-based compression via [lz-string](https://github.com/pieroxy/lz-string), and supports LaTeX math input via [MathJaX](https://www.mathjax.org/). It is hosted on [GitHub Pages](https://pages.github.com/) and uses [marked](https://marked.js.org/) for markdown processing.
 
 This service is especially useful for sharing text content with simple formatting and math. It can also be useful for storing human readable information on NFC tags. The information opens in a browser, yet will be entirely contained on the tag.
 
