@@ -2,6 +2,8 @@
 
 You can use this to store entire documents in URLs. It is similar to [Hashify](https://hashify.me) but has a simpler presentation, uses LZ-based compression via [lz-string](https://github.com/pieroxy/lz-string), and supports LaTeX math input via [MathJaX](https://www.mathjax.org/). It is hosted on [GitHub Pages](https://pages.github.com/) and uses [marked](https://marked.js.org/) for markdown processing.
 
+The page is styled using a modified version of [LaTeX.css](https://latex.now.sh/).
+
 This service is especially useful for sharing text content with simple formatting and math. It can also be useful for storing human readable information on NFC tags. The information opens in a browser, yet will be entirely contained on the tag.
 
 This project is fully client side, so no data is stored on the server. While I cannot read anything written or viewed using this site, the full hashes may be contained in HTTP requests sent to jsdelivr and polyfill.io. Because these hashes technically contain the full content of the page, this isn't a secure system for sensitive data.
