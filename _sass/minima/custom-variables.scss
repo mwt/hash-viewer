@@ -1,1 +1,23 @@
 // Placeholder to allow overriding predefined variables smoothly.
+// From LaTeX.css
+$base-font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+$link-base-color:       #a00;
+$link-visited-color:    $link-base-color;
+$text-color:            hsl(0, 5%, 10%);
+
+// Personal
+$brand-color:           #746D75;
+$brand-color-light:     lighten($brand-color, 40%);
+$brand-color-dark:      #000;
+
+$border-color-01:       $brand-color-light;
+$border-color-02:       lighten($brand-color, 35%);
+$border-color-03:       $link-base-color;
+
+$site-title-color:      $brand-color-dark;
+
+$table-text-color:      lighten($text-color, 18%);
+$table-zebra-color:     lighten($brand-color, 46%);
+$table-header-bg-color: lighten($brand-color, 43%);
+$table-header-border:   lighten($brand-color, 37%);
+$table-border-color:    $border-color-01;

@@ -5,15 +5,15 @@
 }
 
 .btn {
+    color: $link-base-color;
 	border: 1px solid currentColor;
-	border-radius: 5%;
-	padding: 4px 8px !important;
+	border-radius: 8%;
+	padding: 2px 8px !important;
 	user-select: none;
 	white-space: nowrap;
 
 	&:hover {
-		color: $brand-color-dark;
-		background-color: $brand-color;
+		color: $link-hover-color;
     }
 	> svg {
 		vertical-align: text-top;
@@ -23,6 +23,7 @@
 }
 
 #markdown {
+    font-family: $code-font-family;
     width: 100%;
     padding: 5px;
     line-height: normal;

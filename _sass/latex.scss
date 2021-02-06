@@ -77,18 +77,12 @@ html {
 
 body {
   line-height: 1.8;
-
   min-height: 100vh;
   overflow-x: hidden;
   margin: 0 auto;
-
   counter-reset: theorem;
   counter-reset: definition;
   counter-reset: sidenote-counter;
-
-  color: hsl(0, 5%, 10%);
-  background-color: hsl(210, 20%, 98%);
-
   text-rendering: optimizeLegibility;
 }
 
@@ -104,12 +98,6 @@ p {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
-}
-
-/* Make links red */
-a,
-a:visited {
-  color: #a00;
 }
 
 a:focus {
