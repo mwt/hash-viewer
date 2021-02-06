@@ -1,4 +1,4 @@
-function replaceText() {
+(function() {
     /* get the base64 hash from the url */
     var hash = window.location.pathname.substring(1);
     /* decode the hash into text */
@@ -23,6 +23,4 @@ function replaceText() {
         /* join again and replace text in content div */
         document.getElementById('content').innerHTML = contents.join('$$');
     };
-};
-
-replaceText();
+}());
