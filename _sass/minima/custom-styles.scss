@@ -1,7 +1,15 @@
+.hidden {
+    display: none !important;
+}
+
 .flex {
     display: flex;
     align-items: right;
     justify-content: space-between;
+}
+
+.btns {
+    display: inline-block;
 }
 
 .btn {
