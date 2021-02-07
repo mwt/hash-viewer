@@ -15,10 +15,10 @@
 
     {%- include footer.html -%}
 
-  </body>
+    {%- for script in page.scripts -%}
+    <script{% if script.async %} async{% endif %} src="{{ script.url }}"></script>
+    {%- endfor -%}
 
-  {%- for script in page.scripts -%}
-  <script{% if script.async %} async{% endif %} src="{{ script.url }}"></script>
-  {%- endfor -%}
+  </body>
 
 </html>
