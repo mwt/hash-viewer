@@ -3,7 +3,15 @@
   <div class="wrapper">
 
     <div class="footer-col-wrapper">
-      <a class="p-name" href="{{ site.author.website }}">&copy; {{ site.author.name | escape }}</a>
+      <div class="footer-col">
+        <a href="{{ '/' | relative_url }}">
+          {%- octicon home -%}
+          {{ site.title }}
+        </a>
+      </div>
+      <div class="footer-col">
+        <a class="p-name" href="{{ site.author.website }}" rel="author">&copy; {{ site.author.name | escape }}</a>
+      </div>
     </div>
 
     <div class="social-links">

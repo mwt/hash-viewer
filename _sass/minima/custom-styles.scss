@@ -17,15 +17,20 @@ body {
 }
 
 .btn {
-    color: $link-base-color;
-	border: 1px solid currentColor;
-	border-radius: 8%;
-	padding: 2px 8px !important;
+    color: $background-color;
+    font-weight: bold;
+    text-align: center;
+	border: 1px solid $link-base-color;
+    background-color: $link-base-color;
+	border-radius: 0.25rem;
+    font-size: 1rem;
+	padding: .375rem .75rem;
 	user-select: none;
 	white-space: nowrap;
 
 	&:hover {
-		color: $link-hover-color;
+        border-color: $link-hover-color;
+		background-color: $link-hover-color;
     }
 	> svg {
 		vertical-align: text-top;
@@ -47,4 +52,17 @@ body {
     margin-bottom: 16px;
     border: 1px solid $border-color-01;
     border-radius: 6px;
+}
+
+svg.octicon {
+    height: 0.75em;
+    display: inline-block;
+    fill: currentColor;
+    margin-right: 0.2em;
+}
+
+@media screen and (min-width: $on-palm) {
+    .footer-col:last-child {
+        text-align: right;
+    }
 }
