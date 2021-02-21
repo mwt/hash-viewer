@@ -16,7 +16,7 @@
     {%- include footer.html -%}
 
     {%- for script in page.scripts -%}
-    <script{% if script.async %} async{% endif %} src="{{ script.url }}"></script>
+    <script{% if script.async %} async{% endif %} src="{{ script.url }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {%- endfor -%}
 
   </body>
