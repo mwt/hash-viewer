@@ -5,8 +5,11 @@ links:
     rel: "prefetch"
 scripts:
   - url: "https://polyfill.io/v3/polyfill.min.js?features=es6"
-  - url: "https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js"
-  - url: "https://cdn.jsdelivr.net/npm/marked/marked.min.js"
-  - url: "/assets/js/404.js"
+  - jsdelivr: [
+      "npm/lz-string@1.4.4/libs/lz-string.min.js",
+      "npm/marked@2.0.0/marked.min.js",
+      "gh/mwt/hash-viewer@master/assets/js/404.min.js"
+    ]
+    async: true
 ---
 <noscript>JavaScript is required to view this page.</noscript>

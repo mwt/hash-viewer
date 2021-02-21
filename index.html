@@ -1,8 +1,11 @@
 ---
 layout: default
 scripts:
-- url: "https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js"
-- url: "/assets/js/index.js"
+  - jsdelivr: [
+      "npm/lz-string@1.4.4/libs/lz-string.min.js",
+      "gh/mwt/hash-viewer@master/assets/js/index.min.js"
+    ]
+    async: true
 ---
 
 <textarea id="markdown">
