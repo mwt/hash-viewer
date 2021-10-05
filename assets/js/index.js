@@ -20,20 +20,14 @@ function shortenURL() {
     /* when api is contacted, we want the link inserted into small-link */
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            const alias = JSON.parse(xhr.responseText)['alias'];
             const smallLink = document.getElementById("small-link");
-            smallLink.innerHTML = `https://chl.li/${alias}`;
+            smallLink.innerHTML = xhr.responseText;
             smallLink.parentElement.classList.remove("hidden");
         };
     };
     /* the URL of the API */
-    const fetchURL = "https://chl.li/api/v1/shorten";
+    const fetchURL = "https://mwt.ttm.sh/cgi-bin/min.sh";
     /* the URL we want to shorten */
-    const myURL = `${window.location.href}${getHash()}`;
     xhr.open("POST", fetchURL, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify({
-        "url": myURL,
-        "expires": "30"
-    }));
+    xhr.send(getHash());
 };
