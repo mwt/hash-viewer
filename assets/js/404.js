@@ -7,7 +7,7 @@
     var contents = content.split('$$');
     if (contents.length === 1) {
         /* if there is no math, process it with marked and replace text in content div */
-        document.getElementById('content').innerHTML = DOMPurify.sanitize(marked(content));
+        document.getElementById('content').innerHTML = DOMPurify.sanitize(marked.parse(content));
     } else {
         /* load MathJaX only when needed */
         const jaxTag = document.createElement('script');
@@ -17,7 +17,7 @@
         /* process only even indices with marked so that math is untouched */
         for (let index = 0; index < contents.length; index++) {
             if (index % 2 === 0) {
-                contents[index] = marked(contents[index]);
+                contents[index] = marked.parse(contents[index]);
             };
         };
         /* join again and replace text in content div */
