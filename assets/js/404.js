@@ -7,7 +7,7 @@
     var contents = content.split('$$');
     if (contents.length === 1) {
         /* if there is no math, process it with marked and replace text in content div */
-        document.getElementById('content').innerHTML = marked(content);
+        document.getElementById('content').innerHTML = DOMPurify.sanitize(marked(content));
     } else {
         /* load MathJaX only when needed */
         const jaxTag = document.createElement('script');
@@ -21,6 +21,6 @@
             };
         };
         /* join again and replace text in content div */
-        document.getElementById('content').innerHTML = contents.join('$$');
+        document.getElementById('content').innerHTML = DOMPurify.sanitize(contents.join('$$'));
     };
 }());
