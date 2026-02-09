@@ -1,11 +1,10 @@
 ---
 layout: default
 scripts:
-  - jsdelivr: [
-      "npm/lz-string@1.5.0/libs/lz-string.min.js",
-      "gh/mwt/hash-viewer@$COMMIT_HASH/assets/js/index.min.js"
-    ]
-    async: true
+  - url: "/assets/js/node/lz-string.min.js"
+    defer: true
+  - url: "/assets/js/index.js"
+    defer: true
 ---
 <h1>{{ site.title }}</h1>
 

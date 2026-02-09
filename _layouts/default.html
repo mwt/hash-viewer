@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
   {%- include head.html -%}
 
@@ -15,9 +15,9 @@
 
     {%- for script in page.scripts -%}
     {%- if script.url -%}
-    <script{% if script.async %} async{% endif %} src="{{ script.url }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script{% if script.defer %} defer{% endif %} src="{{ script.url }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {%- elsif script.jsdelivr -%}
-    <script{% if script.async %} async{% endif %} src="{{ script.jsdelivr | join: ',' | replace: '$COMMIT_HASH', site.github.build_revision | prepend: 'https://cdn.jsdelivr.net/combine/' }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script{% if script.defer %} defer{% endif %} src="{{ script.jsdelivr | join: ',' | replace: '$COMMIT_HASH', site.github.build_revision | prepend: 'https://cdn.jsdelivr.net/combine/' }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {%- endif -%}
     {%- endfor -%}
 

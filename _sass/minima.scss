@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+// Define defaults for each variable.
+$base-font-size: 16px !default;
+$base-font-weight: 400 !default;
+$small-font-size: $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit: 30px !default;
+
+$text-color: #111 !default;
+$background-color: #fdfdfd !default;
+
+$grey-color: #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark: darken($grey-color, 25%) !default;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width: 800px !default;
+
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
+
+// From LaTeX.css
+$base-font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+$link-base-color: #a00;
+$link-visited-color: $link-base-color;
+$text-color: hsl(0, 5%, 10%);
+$link-hover-color: $text-color;
+
+// Personal
+$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$brand-color: #746D75;
+$brand-color-light: lighten($brand-color, 40%);
+$brand-color-dark: #000;
+
+$border-color-01: $brand-color-light;
+$border-color-02: lighten($brand-color, 35%);
+$border-color-03: $brand-color;
+
+$site-title-color: $brand-color-dark;
+
+$table-text-color: lighten($text-color, 18%);
+$table-zebra-color: lighten($brand-color, 46%);
+$table-header-bg-color: lighten($brand-color, 43%);
+$table-header-border: lighten($brand-color, 37%);
+$table-border-color: $border-color-01;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import partials.
+@import "minima/base",
+"minima/layout",
+"minima/syntax-highlighting",
+"minima/custom-styles"
+;

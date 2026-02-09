@@ -1,8 +1,8 @@
-(function() {
+(function () {
     /* get the base64 hash from the url */
     var hash = window.location.pathname.substring(1);
     /* decode the hash into text */
-    var content = decodeURIComponent(escape(LZString.decompressFromBase64(hash)));
+    var content = decodeURIComponent(LZString.decompressFromBase64(hash));
     /* split into math and markdown segments */
     var contents = content.split('$$');
     if (contents.length === 1) {
@@ -11,7 +11,7 @@
     } else {
         /* load MathJaX only when needed */
         const jaxTag = document.createElement('script');
-        jaxTag.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+        jaxTag.src = "/assets/js/node/mathjax/tex-chtml.js";
         jaxTag.async = true;
         document.body.appendChild(jaxTag);
         /* process only even indices with marked so that math is untouched */
@@ -23,4 +23,7 @@
         /* join again and replace text in content div */
         document.getElementById('content').innerHTML = DOMPurify.sanitize(contents.join('$$'));
     };
+
+    /* save the content in local storage so that it can be edited later */
+    localStorage.setItem("lastContent", content);
 }());

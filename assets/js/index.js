@@ -1,3 +1,11 @@
+/* retrieve the last content from local storage and insert it into the textarea */
+(function () {
+    const lastContent = localStorage.getItem("lastContent");
+    if (lastContent) {
+        document.getElementById('markdown').value = lastContent;
+    };
+}());
+
 function clearText() {
     document.getElementById('markdown').value = "# Title";
 };
@@ -6,7 +14,7 @@ function getHash() {
     /* get the value in the textarea */
     var myText = document.getElementById('markdown').value;
     /* convert the value to a base64 hash */
-    return LZString.compressToBase64(unescape(encodeURIComponent(myText)));
+    return LZString.compressToBase64(encodeURIComponent(myText));
 };
 
 function submitText() {
@@ -17,7 +25,7 @@ function submitText() {
 function shortenURL() {
     /* prepare to contact api */
     var xhr = new XMLHttpRequest();
-    var fd  = new FormData();
+    var fd = new FormData();
     fd.set("shorten", getHash());
     /* when api is contacted, we want the link inserted into small-link */
     xhr.onreadystatechange = function () {

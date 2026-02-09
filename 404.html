@@ -4,12 +4,13 @@ links:
   - url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     rel: "prefetch"
 scripts:
-  - jsdelivr: [
-      "npm/lz-string@1.5.0/libs/lz-string.min.js",
-      "npm/marked@13.0.1/marked.min.js",
-      "npm/dompurify@3.1.5/dist/purify.min.js",
-      "gh/mwt/hash-viewer@$COMMIT_HASH/assets/js/404.min.js"
-    ]
-    async: true
+  - url: "/assets/js/node/lz-string.min.js"
+    defer: true
+  - url: "/assets/js/node/marked.min.js"
+    defer: true
+  - url: "/assets/js/node/dompurify.min.js"
+    defer: true
+  - url: "/assets/js/404.js"
+    defer: true
 ---
 <noscript>JavaScript is required to view this page.</noscript>

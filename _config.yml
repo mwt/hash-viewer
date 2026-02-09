@@ -17,15 +17,12 @@ social:
     - "https://alternativeto.net/software/hash-viewer/about/"
     - "https://devmesh.intel.com/projects/hash-viewer"
 
-
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
   - jekyll-octicons
-  - jemoji
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -34,3 +31,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - LICENSE
+  - .gitignore
+  - package.json
+  - package-lock.json
+  - build.js
+  - node_modules/
