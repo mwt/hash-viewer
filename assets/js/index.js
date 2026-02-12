@@ -13,8 +13,11 @@ function clearText() {
 function getHash() {
     /* get the value in the textarea */
     var myText = document.getElementById('markdown').value;
-    /* convert the value to a base64 hash */
-    return LZString.compressToBase64(encodeURIComponent(myText));
+    return LZString
+        /* convert the value to a base64 hash */
+        .compressToBase64(encodeURIComponent(myText))
+        /* remove padding */
+        .replace(/=+$/, '');
 };
 
 function submitText() {
