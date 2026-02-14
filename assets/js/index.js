@@ -29,7 +29,7 @@ function shortenURL() {
     /* prepare to contact api */
     var xhr = new XMLHttpRequest();
     var fd = new FormData();
-    fd.set("shorten", getHash());
+    fd.set("longurl", getHash());
     /* when api is contacted, we want the link inserted into small-link */
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -39,7 +39,7 @@ function shortenURL() {
         };
     };
     /* the URL of the API */
-    const fetchURL = "https://mwt.ttm.sh/min.php";
+    const fetchURL = "https://h.mwt.me/shorten.php";
     /* the URL we want to shorten */
     xhr.open("POST", fetchURL, true);
     xhr.send(fd);
