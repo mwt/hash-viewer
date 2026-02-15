@@ -1,7 +1,13 @@
 ---
 layout: default
 scripts:
+  - url: "/assets/js/functions.js"
+    defer: true
   - url: "/assets/js/node/lz-string.min.js"
+    defer: true
+  - url: "/assets/js/node/marked.min.js"
+    defer: true
+  - url: "/assets/js/node/dompurify.min.js"
     defer: true
   - url: "/assets/js/index.js"
     defer: true
@@ -9,14 +15,13 @@ scripts:
 <h1>{{ site.title }}</h1>
 
 <textarea id="markdown">
-# Description
+# Title or Header 1
 
-{{ site.description }}
+> {{ site.description }}
+> 
+> — {{ site.author.name }}
 
-You can write math input in display mode like so:
-$$
-\tilde{g}_{-i}(s) = \frac{c'_{i}(s)}{v_{i}(s; s)} - \int_0^s \frac{v'_{i}(s; y)}{v_{i}(s; s)} \tilde{g}_{-i}(y) dy
-$$
+{% include tutorial.md %}
 </textarea>
 
 <pre class="hidden"><code id="small-link"></code></pre>

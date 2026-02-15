@@ -3,27 +3,9 @@
     var hash = window.location.pathname.substring(1);
     /* decode the hash into text */
     var content = decodeURIComponent(LZString.decompressFromBase64(hash));
-    /* split into math and markdown segments */
-    var contents = content.split('$$');
-    if (contents.length === 1) {
-        /* if there is no math, process it with marked and replace text in content div */
-        document.getElementById('content').innerHTML = DOMPurify.sanitize(marked.parse(content));
-    } else {
-        /* load MathJaX only when needed */
-        const jaxTag = document.createElement('script');
-        jaxTag.src = "/assets/js/node/mathjax/tex-chtml.js";
-        jaxTag.async = true;
-        document.body.appendChild(jaxTag);
-        /* process only even indices with marked so that math is untouched */
-        for (let index = 0; index < contents.length; index++) {
-            if (index % 2 === 0) {
-                contents[index] = marked.parse(contents[index]);
-            };
-        };
-        /* join again and replace text in content div */
-        document.getElementById('content').innerHTML = DOMPurify.sanitize(contents.join('$$'));
-    };
 
-    /* save the content in local storage so that it can be edited later */
-    localStorage.setItem("lastContent", content);
+    /* if the content is not empty, update the content div */
+    if (content) {
+        updateById('content', content);
+    }
 }());

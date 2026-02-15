@@ -4,7 +4,7 @@ author:
   website: "https://www.matthewthom.as"
 
 tagline: "Share Math and Markdown"
-description: "Hash Viewer lets you display and share Markdown, HTML, and LaTeX without any server side-components. It works by storing page content in the URL."
+description: "Hash Viewer lets you display and share Markdown, HTML, and rendered math (TeX) without any server side-components. It works by storing page content in the URL."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hash.mwt.me" # the base hostname & protocol for your site, e.g. http://example.com
 

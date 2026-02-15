@@ -3,7 +3,7 @@
 
   {%- include head.html -%}
 
-  <body>
+  <body {%- if page.url == '/' %} class="home"{% endif %}>
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper" id="content">

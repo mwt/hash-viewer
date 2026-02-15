@@ -94,6 +94,10 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+
+  &.home {
+    height: 100vh;
+  }
 }
 
 
@@ -114,7 +118,7 @@ ul, ol, dl, figure,
  * `main` element
  */
 main {
-  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  display: flex;
 }
 
 
@@ -219,7 +223,6 @@ code {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
-  background-color: #eef;
 }
 
 code {
@@ -245,10 +248,11 @@ pre {
 .wrapper {
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
   max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-  margin-right: auto;
-  margin-left: auto;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   @extend %clearfix;
 
   @include media-query($on-laptop) {
@@ -257,6 +261,7 @@ pre {
     padding-right: $spacing-unit * 0.5;
     padding-left: $spacing-unit * 0.5;
   }
+
 }
 
 
@@ -328,6 +333,8 @@ table {
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-heading {
@@ -370,6 +377,9 @@ table {
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
+  min-height: 0;
+  gap: $spacing-unit;
+  justify-content: center;
 }
 
 
@@ -427,6 +437,7 @@ body {
 }
 
 #markdown {
+    flex: 1;
     font-family: $code-font-family;
     width: 100%;
     padding: 5px;
@@ -434,11 +445,22 @@ body {
     resize: vertical;
     outline: none;
     overflow: auto;
-    height: 339px;
+    min-height: 339px;
     margin-top: 16px;
     margin-bottom: 16px;
     border: 1px solid $border-color-01;
     border-radius: 6px;
+}
+
+#preview {
+    display: none;
+
+    @media screen and (min-width: 1200px) {
+        display: block;
+        flex: 1;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
 }
 
 svg.octicon {

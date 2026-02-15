@@ -1,46 +1,23 @@
-/* retrieve the last content from local storage and insert it into the textarea */
 (function () {
+    /* retrieve the last content from local storage and insert it into the textarea */
     const lastContent = localStorage.getItem("lastContent");
     if (lastContent) {
         document.getElementById('markdown').value = lastContent;
     };
+
+
+    /* Create preview box if a media query says the screen width is >= 1200px */
+    if (window.matchMedia("screen and (min-width: 1200px)").matches) {
+        /* Insert preview box to the right of the #content element */
+        const previewElement = document.createElement('div');
+        previewElement.id = 'preview';
+        previewElement.className = 'wrapper';
+        document.getElementById('content').insertAdjacentElement('afterend', previewElement);
+        updateById('preview', document.getElementById('markdown').value);
+        /* Run preview when the textarea content changes */
+        document.getElementById('markdown').addEventListener('input', function () {
+            updateById('preview', this.value);
+        });
+    }
+
 }());
-
-function clearText() {
-    document.getElementById('markdown').value = "# Title";
-};
-
-function getHash() {
-    /* get the value in the textarea */
-    var myText = document.getElementById('markdown').value;
-    return LZString
-        /* convert the value to a base64 hash */
-        .compressToBase64(encodeURIComponent(myText))
-        /* remove padding */
-        .replace(/=+$/, '');
-};
-
-function submitText() {
-    /* redirect to hash page */
-    window.location.href = `/${getHash()}`;
-};
-
-function shortenURL() {
-    /* prepare to contact api */
-    var xhr = new XMLHttpRequest();
-    var fd = new FormData();
-    fd.set("longurl", getHash());
-    /* when api is contacted, we want the link inserted into small-link */
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            const smallLink = document.getElementById("small-link");
-            smallLink.innerHTML = xhr.responseText;
-            smallLink.parentElement.classList.remove("hidden");
-        };
-    };
-    /* the URL of the API */
-    const fetchURL = "https://h.mwt.me/shorten.php";
-    /* the URL we want to shorten */
-    xhr.open("POST", fetchURL, true);
-    xhr.send(fd);
-};
