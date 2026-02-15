@@ -276,8 +276,7 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width: $content-width - $spacing-unit * 2;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
   display: flex;
@@ -286,8 +285,7 @@ pre {
   @extend %clearfix;
 
   @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width: calc(#{$content-width} - (#{$spacing-unit}));
+    max-width: $content-width - $spacing-unit;
     padding-right: $spacing-unit * 0.5;
     padding-left: $spacing-unit * 0.5;
   }
@@ -365,6 +363,10 @@ table {
 /**
  * Site footer
  */
+body.home .site-footer .wrapper {
+  max-width: $content-width * 2 - $spacing-unit * 2;
+}
+
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
@@ -399,8 +401,7 @@ table {
 @include media-query($on-palm) {
   .footer-col {
     float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width: calc(100% - (#{$spacing-unit} / 2));
+    width: calc(100% - #{$spacing-unit * 0.5});
   }
 }
 
@@ -491,6 +492,10 @@ body {
   display: none;
 
   @media screen and (min-width: 1200px) {
+    padding-top: $spacing-unit * 0.5;
+    margin-top: -$spacing-unit * 0.5;
+    border-radius: $spacing-unit * 0.1;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     display: block;
     flex: 1;
     box-sizing: border-box;
