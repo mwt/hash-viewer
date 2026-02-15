@@ -69,9 +69,22 @@ $table-border-color: $border-color-01;
 /**
  * Reset some basic elements
  */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
   margin: 0;
   padding: 0;
 }
@@ -87,9 +100,9 @@ body {
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
@@ -105,9 +118,19 @@ body {
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
 %vertical-rhythm {
   margin-bottom: $spacing-unit * 0.5;
 }
@@ -136,7 +159,7 @@ img {
 /**
  * Figures
  */
-figure > img {
+figure>img {
   display: block;
 }
 
@@ -149,13 +172,15 @@ figcaption {
 /**
  * Lists
  */
-ul, ol {
+ul,
+ol {
   margin-left: $spacing-unit;
 }
 
 li {
-  > ul,
-  > ol {
+
+  >ul,
+  >ol {
     margin-bottom: 0;
   }
 }
@@ -165,7 +190,12 @@ li {
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: $base-font-weight;
 }
 
@@ -233,7 +263,7 @@ pre {
   padding: 8px 12px;
   overflow-x: auto;
 
-  > code {
+  >code {
     border: 0;
     padding-right: 0;
     padding-left: 0;
@@ -247,7 +277,7 @@ pre {
  */
 .wrapper {
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
   display: flex;
@@ -257,7 +287,7 @@ pre {
 
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    max-width: calc(#{$content-width} - (#{$spacing-unit}));
     padding-right: $spacing-unit * 0.5;
     padding-left: $spacing-unit * 0.5;
   }
@@ -282,16 +312,16 @@ pre {
  */
 
 .svg-icon {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    fill: #{$grey-color};
-    padding-right: 5px;
-    vertical-align: text-top;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: #{$grey-color};
+  padding-right: 5px;
+  vertical-align: text-top;
 }
 
 .social-media-list {
-  li + li {
+  li+li {
     padding-top: 5px;
   }
 }
@@ -308,19 +338,24 @@ table {
   color: color.adjust($text-color, $lightness: 18%);
   border-collapse: collapse;
   border: 1px solid $grey-color-light;
+
   tr {
     &:nth-child(even) {
       background-color: color.adjust($grey-color-light, $lightness: 6%);
     }
   }
-  th, td {
+
+  th,
+  td {
     padding: ($spacing-unit * 0.3333333333) ($spacing-unit * 0.5);
   }
+
   th {
     background-color: color.adjust($grey-color-light, $lightness: 3%);
     border: 1px solid color.adjust($grey-color-light, $lightness: -4%);
     border-bottom-color: color.adjust($grey-color-light, $lightness: -12%);
   }
+
   td {
     border: 1px solid $grey-color-light;
   }
@@ -389,97 +424,97 @@ table {
  */
 
 body {
-    border-top: 5px solid $link-base-color;
+  border-top: 5px solid $link-base-color;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 .flex {
-    display: flex;
-    align-items: right;
-    justify-content: space-between;
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
 }
 
 .btns {
-    display: inline-block;
+  display: inline-block;
 }
 
 .btn {
-    color: $background-color;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid $link-base-color;
-    background-color: $link-base-color;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    padding: .375rem .75rem;
-    user-select: none;
-    white-space: nowrap;
+  color: $background-color;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid $link-base-color;
+  background-color: $link-base-color;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: .375rem .75rem;
+  user-select: none;
+  white-space: nowrap;
 
-    &:hover {
-        border-color: $link-hover-color;
-        background-color: $link-hover-color;
-    }
+  &:hover {
+    border-color: $link-hover-color;
+    background-color: $link-hover-color;
+  }
 
-    >svg {
-        vertical-align: text-top;
-        display: inline-block;
-        fill: currentColor;
-    }
+  >svg {
+    vertical-align: text-top;
+    display: inline-block;
+    fill: currentColor;
+  }
 }
 
 .btn[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 #markdown {
-    flex: 1;
-    font-family: $code-font-family;
-    width: 100%;
-    padding: 5px;
-    line-height: normal;
-    resize: vertical;
-    outline: none;
-    overflow: auto;
-    min-height: 339px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    border: 1px solid $border-color-01;
-    border-radius: 6px;
+  flex: 1;
+  font-family: $code-font-family;
+  width: 100%;
+  padding: 5px;
+  line-height: normal;
+  resize: vertical;
+  outline: none;
+  overflow: auto;
+  min-height: 339px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: 1px solid $border-color-01;
+  border-radius: 6px;
 }
 
 #preview {
-    display: none;
+  display: none;
 
-    @media screen and (min-width: 1200px) {
-        display: block;
-        flex: 1;
-        box-sizing: border-box;
-        overflow-y: auto;
-    }
+  @media screen and (min-width: 1200px) {
+    display: block;
+    flex: 1;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
 }
 
 svg.octicon {
-    height: 0.683em;
-    display: inline-block;
-    fill: currentColor;
-    margin-right: 0.2em;
+  height: 0.683em;
+  display: inline-block;
+  fill: currentColor;
+  margin-right: 0.2em;
 }
 
 @media screen and (min-width: $on-palm) {
-    body {
-        font-size: 1.25em;
-    }
+  body {
+    font-size: 1.25em;
+  }
 
-    .footer-col:last-child {
-        float:right;
-        padding-left: 0;
-        padding-right: $spacing-unit * 0.5;
-    }
+  .footer-col:last-child {
+    float: right;
+    padding-left: 0;
+    padding-right: $spacing-unit * 0.5;
+  }
 
 }
 

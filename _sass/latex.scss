@@ -86,7 +86,7 @@ textarea {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
+article>*+* {
   margin-top: 1em;
 }
 
@@ -96,6 +96,7 @@ pre,
 kbd {
   font-size: 85%;
 }
+
 pre {
   padding: 1rem 1.4rem;
   max-width: 100%;
@@ -103,10 +104,12 @@ pre {
   border-radius: 4px;
   background: hsl(210, 28%, 93%);
 }
+
 pre code {
   font-size: 95%;
   position: relative;
 }
+
 kbd {
   background: hsl(210, 5%, 100%);
   border: 1px solid hsl(210, 5%, 70%);
@@ -124,24 +127,29 @@ table {
   border-top: 2.27px solid black;
   border-bottom: 2.27px solid black;
   /* display: block; */
-  overflow-x: auto; /* does not work because element is not block */
+  overflow-x: auto;
+  /* does not work because element is not block */
   /* white-space: nowrap; */
   counter-increment: caption;
 }
+
 /* add bottom border on column table headings  */
-table tr > th[scope='col'] {
+table tr>th[scope='col'] {
   border-bottom: 1.36px solid black;
 }
+
 /* add right border on row table headings  */
-table tr > th[scope='row'] {
+table tr>th[scope='row'] {
   border-right: 1.36px solid black;
 }
-table > tbody > tr:first-child > td,
-table > tbody > tr:first-child > th {
+
+table>tbody>tr:first-child>td,
+table>tbody>tr:first-child>th {
   border-top: 1.36px solid black;
 }
-table > tbody > tr:last-child > td,
-table > tbody > tr:last-child > th {
+
+table>tbody>tr:last-child>td,
+table>tbody>tr:last-child>th {
   border-bottom: 1.36px solid black;
 }
 
@@ -151,6 +159,7 @@ td {
   padding: 0.5rem;
   line-height: 1.1;
 }
+
 /* Table caption */
 caption {
   text-align: left;
@@ -173,7 +182,7 @@ caption::before {
 
 /* if a table is wrapped in a scroll wrapper,
   the table cells shouldn't wrap */
-.scroll-wrapper > table td {
+.scroll-wrapper>table td {
   white-space: nowrap;
 }
 
@@ -187,9 +196,11 @@ nav ol {
   counter-reset: item;
   padding-left: 2rem;
 }
+
 nav li {
   display: block;
 }
+
 nav li:before {
   content: counters(item, '.') ' ';
   counter-increment: item;
@@ -208,6 +219,7 @@ dl dd {
   margin: 12px 0;
   font-style: italic;
 }
+
 .theorem::before {
   content: 'Theorem ' counter(theorem) '. ';
   font-weight: bold;
@@ -221,6 +233,7 @@ dl dd {
   margin: 12px 0;
   font-style: italic;
 }
+
 .lemma::before {
   content: 'Lemma ' counter(theorem) '. ';
   font-weight: bold;
@@ -234,10 +247,12 @@ dl dd {
   font-style: normal;
   position: relative;
 }
+
 .proof::before {
   content: 'Proof. ' attr(title);
   font-style: italic;
 }
+
 .proof:after {
   content: '◾️';
   position: absolute;
@@ -252,6 +267,7 @@ dl dd {
   margin: 12px 0;
   font-style: normal;
 }
+
 .definition::before {
   content: 'Definition ' counter(definition) '. ';
   font-weight: bold;
@@ -309,7 +325,7 @@ dl dd {
 }
 
 /* add number in front of the sidenote */
-.sidenote-number ~ .sidenote::before {
+.sidenote-number~.sidenote::before {
   content: counter(sidenote-counter) ' ';
   font-size: 0.7rem;
   top: -0.5rem;
@@ -339,10 +355,12 @@ input.sidenote-toggle {
   label.sidenote-toggle:not(.sidenote-number) {
     display: inline;
   }
+
   .sidenote {
     display: none;
   }
-  .sidenote-toggle:checked + .sidenote {
+
+  .sidenote-toggle:checked+.sidenote {
     display: block;
     margin: 0.5rem 1.25rem 1rem 0.5rem;
     float: left;
@@ -350,6 +368,7 @@ input.sidenote-toggle {
     clear: both;
     width: 95%;
   }
+
   /* tweak indentation of sidenote inside a blockquote */
   blockquote .sidenote {
     margin-right: -25vw;
@@ -364,6 +383,7 @@ input.sidenote-toggle {
   font-size: 85%;
   margin-bottom: 0.4rem;
 }
+
 .footnotes {
   border-top: 1px solid hsl(0, 0%, 39%);
 }
@@ -374,10 +394,12 @@ input.sidenote-toggle {
   text-align: center;
   margin-top: 0;
 }
+
 .abstract {
   margin: 2.25rem 0;
 }
-.abstract > h2 {
+
+.abstract>h2 {
   font-size: 1rem;
   margin-bottom: -0.2rem;
 }
@@ -442,17 +464,17 @@ h6 {
   line-height: 1.625rem;
 }
 
-h1 + h2 {
+h1+h2 {
   margin-top: 1.625rem;
 }
 
-h2 + h3,
-h3 + h4,
-h4 + h5 {
+h2+h3,
+h3+h4,
+h4+h5 {
   margin-top: 0.8rem;
 }
 
-h5 + h6 {
+h5+h6 {
   margin-top: -0.8rem;
 }
 
