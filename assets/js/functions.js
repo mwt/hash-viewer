@@ -44,7 +44,9 @@ function updateById(id, content) {
 */
 
 function clearText() {
-    document.getElementById('markdown').value = "# Title";
+    /* clear the local storage and refresh the page to clear the textarea and preview */
+    localStorage.clear();
+    location.reload();
 };
 
 function getHash() {
