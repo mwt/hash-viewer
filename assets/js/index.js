@@ -5,7 +5,6 @@
         document.getElementById('markdown').value = lastContent;
     };
 
-
     /* Create preview box if a media query says the screen width is >= 1200px */
     if (window.matchMedia("screen and (min-width: 1200px)").matches) {
         /* Insert preview box to the right of the #content element */
@@ -19,5 +18,4 @@
             updateById('preview', this.value);
         });
     }
-
 }());
