@@ -1,8 +1,8 @@
 ## Section (formatting)
 
-Write **bold**, *italic*, , ***bold italic***, ~~strikethrough~~, or <u>underline</u> (HTML).
-Escape: \*.
-Link: [a link](https://mwt.me)
+Write **bold**, *italic*, ***bold italic***, ~~strikethrough~~, or <u>underline</u> (HTML),
+Escape: \*,
+Link: [a link](https://mwt.me).
 
 ### 1.1. Subsection
 

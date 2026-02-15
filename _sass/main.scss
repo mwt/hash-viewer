@@ -2,7 +2,7 @@
 @use "sass:color";
 
 // Define defaults for each variable.
-$base-font-size: 16px !default;
+$base-font-size: 1rem !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
@@ -33,15 +33,13 @@ $link-hover-color: $text-color;
 
 // Personal
 $code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
-$brand-color: #746D75;
+$brand-color: #5c6f68;
 $brand-color-light: color.adjust($brand-color, $lightness: 40%, $space: hsl);
-$brand-color-dark: #000;
+$brand-color-dark: $text-color;
 
 $border-color-01: $brand-color-light;
 $border-color-02: color.adjust($brand-color, $lightness: 35%, $space: hsl);
 $border-color-03: $brand-color;
-
-$site-title-color: $brand-color-dark;
 
 $table-text-color: color.adjust($text-color, $lightness: 18%, $space: hsl);
 $table-zebra-color: color.adjust($brand-color, $lightness: 46%, $space: hsl);
@@ -205,11 +203,11 @@ h6 {
  * Links
  */
 a {
-  color: $brand-color;
+  color: $link-base-color;
   text-decoration: none;
 
   &:visited {
-    color: color.adjust($brand-color, $lightness: -15%);
+    color: color.adjust($link-base-color, $lightness: -15%);
   }
 
   &:hover {
@@ -231,8 +229,8 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $text-color;
+  border-left: 4px solid $link-base-color;
   padding-left: $spacing-unit * 0.5;
   @include relative-font-size(1.125);
   letter-spacing: -1px;
@@ -240,6 +238,10 @@ blockquote {
 
   > :last-child {
     margin-bottom: 0;
+  }
+
+  > p:first-child {
+    margin-top: 0;
   }
 }
 
@@ -511,8 +513,8 @@ svg.octicon {
 }
 
 @media screen and (min-width: $on-palm) {
-  body {
-    font-size: 1.25em;
+  :root {
+    font-size: 125%;
   }
 
   .footer-col:last-child {
