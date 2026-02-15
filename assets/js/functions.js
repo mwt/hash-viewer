@@ -9,7 +9,7 @@ function updateById(id, content) {
     var contents = content.split('$$');
     if (contents.length === 1) {
         /* if there is no math, process it with marked and replace text in content div */
-        document.getElementById('content').innerHTML = DOMPurify.sanitize(marked.parse(content));
+        targetElement.innerHTML = DOMPurify.sanitize(marked.parse(content));
     } else {
         /* process only even indices with marked so that math is untouched */
         for (let index = 0; index < contents.length; index++) {
