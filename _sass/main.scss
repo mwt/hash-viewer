@@ -230,7 +230,7 @@ a {
  */
 blockquote {
   color: $text-color;
-  border-left: 4px solid $link-base-color;
+  border-left: 4px solid $brand-color;
   padding-left: $spacing-unit * 0.5;
   @include relative-font-size(1.125);
   letter-spacing: -1px;
@@ -240,7 +240,7 @@ blockquote {
     margin-bottom: 0;
   }
 
-  > p:first-child {
+  >p:first-child {
     margin-top: 0;
   }
 }
@@ -263,6 +263,13 @@ code {
 
 pre {
   padding: 8px 12px;
+  background-color: $text-color;
+  color: $background-color;
+  border: {
+    color: $brand-color;
+    width: 3px;
+    style: solid;
+  }
   overflow-x: auto;
 
   >code {
@@ -284,6 +291,8 @@ pre {
   display: flex;
   flex-direction: column;
   flex: 1;
+  word-break: break-all;
+  overflow-wrap: break-word;
   @extend %clearfix;
 
   @include media-query($on-laptop) {
@@ -493,7 +502,7 @@ body {
 #preview {
   display: none;
 
-  @media screen and (min-width: 1200px) {
+  @include media-query(1200px) {
     padding-top: $spacing-unit * 0.5;
     margin-top: -$spacing-unit * 0.5;
     border-radius: $spacing-unit * 0.1;
