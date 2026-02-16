@@ -8,30 +8,24 @@ Link: [a link](https://mwt.me).
 
 Sections aren't auto-numbered. Number manually.
 
-#### ***Subsubsection (lists and code)***
+#### 1.1.1. Subsubsection (lists and code)
 
-Formatting also works in headings. Levels go down to `######`.
+Heading levels go down to `######`.
 
-Supported:
+##### Supported:
 * Tables
 * Math in TeX form with `$$`,`$`
 * Environments for theorems, proofs, and definitions
 
-*Not* supported:
+##### *Not* supported:
 1. Footnotes
 2. `{.class #id}` attributes
    * Use HTML instead
 3. Code syntax highlighting
 
-   Code blocks are supported, but look like
-   ```
-   def f(x):
-      return x**2
-   ```
-
 ---
 
-#### ***Tables***
+#### 1.1.2. Tables
 
 | Tables       | Are       | Supported     |
 | ------------ | --------- | ------------- |
@@ -41,7 +35,16 @@ Supported:
 
 ---
 
-#### ***Math***
+#### 1.1.3. Code blocks
+
+```
+def f(x):
+   return "f(" + str(x) + ")"
+```
+
+---
+
+#### 1.1.4. Math
 
 Use `$$` for display math and `$` for inline math. E.g.,
 
@@ -53,7 +56,7 @@ holds for any continuous $f$ on $[0,1]$.
 
 ---
 
-#### ***Theorems and proofs***
+#### 1.1.5. Theorems and proofs
 
 <div class=theorem>
 The area of a unit right triangle is given by
