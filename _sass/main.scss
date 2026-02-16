@@ -297,7 +297,8 @@ pre {
   @extend %clearfix;
 
   @include media-query($on-laptop) {
-    max-width: $content-width - $spacing-unit;
+    width: $content-width - $spacing-unit;
+    max-width: 100%;
     padding-right: $spacing-unit * 0.5;
     padding-left: $spacing-unit * 0.5;
   }
