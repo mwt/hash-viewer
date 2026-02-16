@@ -14,7 +14,7 @@ Formatting also works in headings. Levels go down to `######`.
 
 Supported:
 * Tables
-* Math in TeX form with \$\$
+* Math in TeX form with `$$`,`$`
 * Environments for theorems, proofs, and definitions
 
 *Not* supported:
@@ -43,11 +43,13 @@ Supported:
 
 #### ***Math***
 
-Use display math:
+Use `$$` for display math and `$` for inline math. E.g.,
 
-$$\int_0^1 f(x)\,dx = \lim_{n\to\infty} \sum_{t=1}^n f \left( \frac{t}{n} \right) \frac{1}{n}$$
+$$
+\int_0^1 f(x)\,dx = \lim_{n\to\infty} \sum_{t=1}^n f \left( \frac{t}{n} \right) \frac{1}{n}
+$$
 
-Inline math is not supported (no need to escape $). Use display math. Inline can be hacked with \\\(x^2\\\), but at least one display block is required for MathJaX to load.
+holds for any continuous $f$ on $[0,1]$.
 
 ---
 
@@ -56,20 +58,29 @@ Inline math is not supported (no need to escape $). Use display math. Inline can
 <div class=theorem>
 The area of a unit right triangle can be calculated with the right hand rule from calculus,
 
-$$\int_0^1 x\,dx = \frac{1}{2}.$$
+$$
+\int_0^1 x\,dx = \frac{1}{2}.
+$$
 </div>
 
 <div class=proof>
 Recall for any continuous function,
 
-$$\int_0^1 f(x)\,dx = \lim_{n\to\infty} \sum_{t=1}^n f \left( \frac{t}{n} \right) \frac{1}{n}.$$
+$$
+\int_0^1 f(x)\,dx = \lim_{n\to\infty} \sum_{t=1}^n f \left( \frac{t}{n} \right) \frac{1}{n}.
+$$
 
 Then,
-$$\begin{align*}
+
+$$
+\begin{align*}
    \int_0^1 x\,dx &= \lim_{n\to\infty} \sum_{t=1}^n \frac{t}{n} \frac{1}{n} \\
                   &= \lim_{n\to\infty} \frac{1}{n^2} \cdot \sum_{t=1}^n t \\
                   &= \lim_{n\to\infty} \frac{1}{n^2} \cdot \frac{n(n+1)}{2} \\
                   &= \lim_{n\to\infty} \frac{n^2 + n}{2n^2} \\
                   &= \lim_{n\to\infty} \left( \frac{1}{2} + \frac{1}{2n} \right) = \frac{1}{2}.
-\end{align*}$$
+\end{align*}
+$$
 </div>
+
+

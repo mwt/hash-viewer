@@ -8,13 +8,16 @@ const deps = [
     { name: "dompurify", specifier: "dompurify/dist/purify.js" },
     { name: "lz-string", specifier: "lz-string" },
     { name: "marked", specifier: "marked/lib/marked.umd.js", force: true },
-    { name: "mathjax", specifier: "mathjax", copy: true }
+    { name: "marked-katex-extension", specifier: "marked-katex-extension/lib/index.umd.js", force: true },
+    { name: "katex", specifier: "katex/dist", copy: true }
 ];
 
 async function buildDeps() {
+    const exportDir = path.join(__dirname, "assets", "node");
+
     /* Delete node directory if it exists and then recreate it */
-    await fs.rm(path.join(__dirname, "assets", "js", "node"), { recursive: true, force: true });
-    await fs.mkdir(path.join(__dirname, "assets", "js", "node"), { recursive: true });
+    await fs.rm(exportDir, { recursive: true, force: true });
+    await fs.mkdir(exportDir, { recursive: true });
 
     await Promise.all(
         deps.map(async ({ name, specifier, force, copy }) => {
@@ -27,11 +30,11 @@ async function buildDeps() {
                 
                 /* If file path is a directory, copy the whole directory. Otherwise, copy the file */
                 if ((await fs.stat(filePath)).isDirectory()) {
-                    const outDir = path.join(__dirname, "assets", "js", "node", name);
+                    const outDir = path.join(exportDir, name);
                     await fs.cp(filePath, outDir, { recursive: true });
                     return;
                 } else {
-                    const outPath = path.join(__dirname, "assets", "js", "node", `${name}`);
+                    const outPath = path.join(exportDir, `${name}`);
                     await fs.copyFile(filePath, outPath);
                     return;
                 }
@@ -53,7 +56,7 @@ async function buildDeps() {
                 }
 
                 /* Create the minified output file */
-                const outPath = path.join(__dirname, "assets", "js", "node", `${name}.min.js`);
+                const outPath = path.join(exportDir, `${name}.min.js`);
                 await fs.writeFile(outPath, result.code);
             })
     );

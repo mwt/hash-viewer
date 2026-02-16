@@ -19,6 +19,8 @@ social:
 
 # Build settings
 markdown: kramdown
+sass:
+  style: compressed
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
