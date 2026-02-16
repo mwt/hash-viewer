@@ -1,9 +1,3 @@
-# Title or Header 1
-
-> Hash Viewer lets you display and share Markdown, HTML, and rendered math (TeX) without any server side-components. It works by storing page content in the URL.
-> 
-> — Matthew Wildrick Thomas
-
 ## Section (formatting)
 
 Write **bold**, *italic*, ***bold italic***, ~~strikethrough~~, or <u>underline</u> (HTML),
