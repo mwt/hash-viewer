@@ -56,7 +56,7 @@ holds for any continuous $f$ on $[0,1]$.
 #### ***Theorems and proofs***
 
 <div class=theorem>
-The area of a unit right triangle can be calculated with the right hand rule from calculus,
+The area of a unit right triangle is given by
 
 $$
 \int_0^1 x\,dx = \frac{1}{2}.
@@ -82,5 +82,3 @@ $$
 \end{align*}
 $$
 </div>
-
-
