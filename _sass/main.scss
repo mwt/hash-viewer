@@ -542,10 +542,11 @@ svg.octicon {
 /*
  * KaTeX Overrides
 */
-.katex-display {
+:root .katex-display {
   overflow: auto hidden;
   scrollbar-width: thin;
   padding-bottom: 8px;
+  margin-bottom: calc(1em - 8px);
 }
 
 :not(.katex-display)>.katex {
