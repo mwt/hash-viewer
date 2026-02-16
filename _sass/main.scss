@@ -265,11 +265,13 @@ pre {
   padding: 8px 12px;
   background-color: $text-color;
   color: $background-color;
+
   border: {
     color: $brand-color;
     width: 3px;
     style: solid;
   }
+
   overflow-x: auto;
 
   >code {
@@ -457,13 +459,24 @@ body {
   color: $background-color;
   font-weight: bold;
   text-align: center;
-  border: 1px solid $link-base-color;
-  background-color: $link-base-color;
+  border: 1px solid $grey-color-dark;
+  background-color: $grey-color-dark;
   border-radius: 0.25rem;
   font-size: 1rem;
   padding: .375rem .75rem;
   user-select: none;
   white-space: nowrap;
+
+  &[type="submit"] {
+    background-color: $link-base-color;
+    border-color: $link-base-color;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 
   &:hover {
     border-color: $link-hover-color;
@@ -477,19 +490,13 @@ body {
   }
 }
 
-.btn[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
 #markdown {
   flex: 1;
   font-family: $code-font-family;
   width: 100%;
   padding: 5px;
   line-height: normal;
-  resize: vertical;
+  resize: none;
   outline: none;
   overflow: auto;
   min-height: 339px;
@@ -502,7 +509,7 @@ body {
 #preview {
   display: none;
 
-  @include media-query(1200px) {
+  @media screen and (min-width: 1200px) {
     padding-top: $spacing-unit * 0.5;
     margin-top: -$spacing-unit * 0.5;
     border-radius: $spacing-unit * 0.1;
