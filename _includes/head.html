@@ -11,6 +11,14 @@
     {%- include google-analytics.html -%}
   {%- endif -%}
 
+  {%- for script in page.scripts -%}
+  {%- if script.url -%}
+  <script{% if script.defer %} defer{% endif %} src="{{ script.url }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  {%- elsif script.jsdelivr -%}
+  <script{% if script.defer %} defer{% endif %} src="{{ script.jsdelivr | join: ',' | replace: '$COMMIT_HASH', site.github.build_revision | prepend: 'https://cdn.jsdelivr.net/combine/' }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  {%- endif -%}
+  {%- endfor -%}
+
   {%- include custom-head.html -%}
   
 </head>

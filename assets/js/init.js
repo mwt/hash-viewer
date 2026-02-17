@@ -1,7 +1,10 @@
 /*
- * Set up Marked with KaTeX extension
+ * Refresh page on hash change event
 */
-marked.use(markedKatex({throwOnError: false}));
+window.addEventListener("hashchange", function () {
+    location.reload();
+});
+
 
 /*
  * Primary functions
@@ -32,15 +35,32 @@ function getHash() {
     /* get the value in the textarea */
     var myText = document.getElementById('markdown').value;
     return LZString
-        /* convert the value to a base64 hash */
-        .compressToBase64(encodeURIComponent(myText))
-        /* remove padding */
+        /* convert the value to a url safe base64 hash */
+        .compressToBase64(myText)
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
         .replace(/=+$/, '');
 };
 
+function viewContent(hash) {
+    /* decode the hash into text */
+    var content = LZString.decompressFromBase64(
+        hash.replace(/-/g, '+').replace(/_/g, '/')
+    );
+
+    /* if the content is not empty, update the content div */
+    if (content) {
+        updateById('content', content);
+    }
+
+    /* unhide the page content and edit link */
+    document.querySelector('main.page-content').classList.remove('hidden');
+    document.getElementById('edit-link').classList.remove('hidden');
+}
+
 function submitText() {
     /* redirect to hash page */
-    window.location.href = `/${getHash()}`;
+    window.location.hash = `#${getHash()}`;
 };
 
 function shortenURL() {

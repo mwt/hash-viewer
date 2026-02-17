@@ -3,23 +3,15 @@
 
   {%- include head.html -%}
 
-  <body {%- if page.url == '/' %} class="home"{% endif %}>
+  <body>
 
-    <main class="page-content" aria-label="Content">
+    <main class="page-content hidden" aria-label="Content">
       <div class="wrapper" id="content">
         {{ content }}
       </div>
     </main>
 
     {%- include footer.html -%}
-
-    {%- for script in page.scripts -%}
-    {%- if script.url -%}
-    <script{% if script.defer %} defer{% endif %} src="{{ script.url }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {%- elsif script.jsdelivr -%}
-    <script{% if script.defer %} defer{% endif %} src="{{ script.jsdelivr | join: ',' | replace: '$COMMIT_HASH', site.github.build_revision | prepend: 'https://cdn.jsdelivr.net/combine/' }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {%- endif -%}
-    {%- endfor -%}
 
   </body>
 
