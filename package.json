@@ -8,10 +8,10 @@
   },
   "dependencies": {
     "dompurify": "^3.3.1",
+    "katex": "^0.16.28",
     "lz-string": "^1.5.0",
     "marked": "^17.0.2",
-    "marked-katex-extension": "^5.1.6",
-    "katex": "^0.16.28"
+    "marked-katex-extension": "^5.1.7"
   },
   "devDependencies": {
     "terser": "^5.46.0"
