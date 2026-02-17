@@ -542,6 +542,7 @@ svg.octicon {
 /*
  * KaTeX Overrides
 */
+/* scrollbar for big equations */
 :root .katex-display {
   overflow: auto hidden;
   scrollbar-width: thin;
@@ -549,8 +550,14 @@ svg.octicon {
   margin-bottom: calc(1em - 8px);
 }
 
+/* smaller inline math */
 :not(.katex-display)>.katex {
   font-size: 1em;
+}
+
+/* bugfix for chrome scrollbar */
+#preview .katex .katex-mathml {
+  display: none;
 }
 
 @include meta.load-css("latex.scss");
